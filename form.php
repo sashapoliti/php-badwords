@@ -1,6 +1,9 @@
 <?php
 $paragraph = $_GET['paragraph'];
 $word = $_GET['word'];
+$len_par = strlen($paragraph);
+$censored_paragraph = str_replace($word, '***', $paragraph);
+$len_par_cen = strlen($censored_paragraph);
 ?>
 
 <!DOCTYPE html>
@@ -15,20 +18,22 @@ $word = $_GET['word'];
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/256/10393/10393287.png">
-  <title>Php Badwords</title>
+  <title>Php Badwords - Results</title>
 </head>
 
 <body>
-  <h2>
-    <?php
-    echo "Il paragrafo inserito è: $paragraph";
-    ?>
-  </h2>
-  <h2>
-    <?php
-    echo "La parola da censurare è: $word";
-    ?>
-  </h2>
+  <main>
+    <div class="container">
+      <?php
+      echo "<h2 class='mt-5'>Paragrafo originale:</h2>
+      <p>$paragraph</p>
+      <h5>Lunghezza paragrafo: $len_par</h5>
+      
+      <h2 class='mt-5'>Paragrafo censurato:</h2>
+      <p>$censored_paragraph</h2>
+      <h5>Lunghezza paragrafo: $len_par_cen</h5>";
+      ?>
+  </main>
 </body>
 
 </html>

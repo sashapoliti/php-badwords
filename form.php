@@ -1,3 +1,8 @@
+<?php
+$paragraph = $_GET['paragraph'];
+$word = $_GET['word'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,20 +19,16 @@
 </head>
 
 <body>
-  <div class="container">
-    <h2 class="mt-5">Form di Censura</h2>
-    <form action="form.php" method="get" class="mt-3">
-      <div class="form-group">
-        <label for="paragraph">Inserisci un paragrafo:</label>
-        <textarea id="paragraph" name="paragraph" class="form-control" rows="4" cols="50"></textarea>
-      </div>
-      <div class="form-group mt-2 ">
-        <label for="word">Parola da censurare:</label>
-        <input type="text" id="word" name="word" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-primary mt-3 ">Invia</button>
-    </form>
-  </div>
+  <h2>
+    <?php
+    echo "Il paragrafo inserito è: $paragraph";
+    ?>
+  </h2>
+  <h2>
+    <?php
+    echo "La parola da censurare è: $word";
+    ?>
+  </h2>
 </body>
 
 </html>
